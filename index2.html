@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Renovation Estimate Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    h1, h2, h3 { color: #333; }
+    .section { margin-bottom: 40px; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-weight: bold; margin-bottom: 4px; }
+    select, input[type="number"] { display: block; padding: 5px; margin-bottom: 8px; width: 250px; }
+    button { margin-top: 10px; padding: 10px 15px; }
+    .subtotal { font-weight: bold; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Complete Renovation Estimate Calculator</h1>
+
+  <!-- Bathroom -->
+  <div class="section" id="bathroomSection">
+    <h2>Bathroom</h2>
+    <div class="form-group">
+      <label for="bathroomType">Project Type:</label>
+      <select id="bathroomType">
+        <option value="0">-- Select --</option>
+        <option value="15000">Small Remodel ($15,000)</option>
+        <option value="30500">Full Renovation ($30,500)</option>
+        <option value="2000">Minor Updates ($2,000)</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Herringbone Tile ($18/sqft):</label><input type="number" id="bathHerringbone" /></div>
+    <div class="form-group"><label>Glazed Wall Tile ($6/sqft):</label><input type="number" id="bathGlazed" /></div>
+    <div class="form-group"><label>Floor Tile ($4/sqft):</label><input type="number" id="bathFloorTile" /></div>
+    <div class="form-group"><label>Single Vanity ($300):</label><input type="number" id="bathSingleVanity" /></div>
+    <div class="form-group"><label>Double Vanity ($2000):</label><input type="number" id="bathDoubleVanity" /></div>
+    <div class="form-group"><label>Faucets ($100):</label><input type="number" id="bathFaucets" /></div>
+    <div class="form-group"><label>GFCI Outlets ($75):</label><input type="number" id="bathGFCI" /></div>
+    <div class="form-group"><label>Heated Floor ($9.5/sqft):</label><input type="number" id="bathHeated" /></div>
+    <button onclick="calculateBathroom()">Calculate Bathroom Total</button>
+    <p class="subtotal">Bathroom Total: $<span id="bathroomTotal">0.00</span></p>
+  </div>
+
+  <!-- Kitchen -->
+  <div class="section" id="kitchenSection">
+    <h2>Kitchen</h2>
+    <div class="form-group">
+      <label for="kitchenType">Project Type:</label>
+      <select id="kitchenType">
+        <option value="0">-- Select --</option>
+        <option value="48500">Full Remodel ($48,500)</option>
+        <option value="9750">Cabinet Replacement Only ($9,750)</option>
+        <option value="7310">Countertops + Backsplash ($7,310)</option>
+        <option value="2000">Appliance/Lighting Updates ($2,000)</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Quartz Countertop ($120/sqft):</label><input type="number" id="kitchenQuartz" /></div>
+    <div class="form-group"><label>Granite Countertop ($110/sqft):</label><input type="number" id="kitchenGranite" /></div>
+    <div class="form-group"><label>Stock Cabinets ($300/ft):</label><input type="number" id="kitchenStockCabinet" /></div>
+    <div class="form-group"><label>Custom Cabinets ($900/ft):</label><input type="number" id="kitchenCustomCabinet" /></div>
+    <div class="form-group"><label>Dishwashers ($800):</label><input type="number" id="kitchenDishwasher" /></div>
+    <div class="form-group"><label>Range Hood ($300):</label><input type="number" id="kitchenHood" /></div>
+    <button onclick="calculateKitchen()">Calculate Kitchen Total</button>
+    <p class="subtotal">Kitchen Total: $<span id="kitchenTotal">0.00</span></p>
+  </div>
+
+  <!-- Flooring -->
+  <div class="section" id="flooringSection">
+    <h2>Flooring</h2>
+    <div class="form-group">
+      <label for="flooringType">Project Type:</label>
+      <select id="flooringType">
+        <option value="0">-- Select --</option>
+        <option value="7310">Hardwood/LVP (avg $7,310)</option>
+        <option value="9750">Tile ($9,750)</option>
+        <option value="2440">Carpet ($2,440)</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Solid Hardwood ($10/sqft):</label><input type="number" id="flooringHardwood" /></div>
+    <div class="form-group"><label>Laminate ($4.50/sqft):</label><input type="number" id="flooringLaminate" /></div>
+    <div class="form-group"><label>LVP ($6/sqft):</label><input type="number" id="flooringLVP" /></div>
+    <button onclick="calculateFlooring()">Calculate Flooring Total</button>
+    <p class="subtotal">Flooring Total: $<span id="flooringTotal">0.00</span></p>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
